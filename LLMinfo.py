@@ -2,13 +2,40 @@ import sys
 import os
 def option_a(filename):
     with open(filename, 'r') as file:
+        lines = file.readlines()
+        if not lines:
+            print("No models in this file")
+            return
+    with open(filename, 'r') as file:
         print("Models:")
         for line in file:
             line = line.strip()          
-            if not line:                 
-                continue
-            parts = line.split(',')      
+            parts = line.split(',')   
+            #print(parts)   
             print(parts[0])             
+
+def optopm_r(filename):
+    with open(filename, 'r') as file:
+        lines = file.readlines()
+        if not lines:
+            print("No models in this file")
+            return
+    with open(filename, 'r') as file:
+        count = 0
+        for line in file:
+            line = line.strip()          
+            parts = line.split(',')
+            #print(parts)   
+            if parts[-1].lower() == "remote":
+                if count =="0":
+                    print("Remote models:")
+                print(parts[0])
+                count += 1
+            else:
+                continue
+    if count == 0:
+        print("No remote models in this file")
+
 
 def main():
     input_list = sys.argv[1:]
@@ -33,8 +60,8 @@ def main():
         print("this option doesn't exist")
         sys.exit(1)
     
-    option_a(filename)  
-
+    #option_a(filename)  
+    #optopm_r(filename)  
 
 if __name__ == "__main__":
     main()
