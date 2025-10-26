@@ -94,6 +94,7 @@ def option_v(filename):
     print("Name:Haoxuan Jin\nStudent ID: 25167901\nCourse: 32547-UNIX Systems Programming\nfinished date: 2025-10-26\ngithub link:https://github.com/Haoxuan006631/32547-UNIX-Systems-Programming-Assignment.git")
 
 def main():
+
     input_list = sys.argv[1:]
     #test input
     #print(input_list)
@@ -114,6 +115,9 @@ def main():
         sys.exit(1)
     elif options not in["-a", "-r", "-c", "-s", "-v"]:
         print("this option doesn't exist")
+        sys.exit(1)
+    if not os.path.isfile(filename) or not os.access(filename, os.R_OK):
+        print("Error: file not found")
         sys.exit(1)
     '''
     test 
