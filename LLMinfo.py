@@ -2,8 +2,13 @@ import sys
 import os
 def option_a(filename):
     with open(filename, 'r') as file:
-        data = file.read()
-        print(data)
+        print("Models:")
+        for line in file:
+            line = line.strip()          
+            if not line:                 
+                continue
+            parts = line.split(',')      
+            print(parts[0])             
 
 def main():
     input_list = sys.argv[1:]
