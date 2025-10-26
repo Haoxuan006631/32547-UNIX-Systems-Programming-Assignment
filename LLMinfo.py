@@ -18,7 +18,7 @@ def optopm_r(filename):
     with open(filename, 'r') as file:
         lines = file.readlines()
         if not lines:
-            print("No models in this file")
+            print("No remote models in this file")
             return
     with open(filename, 'r') as file:
         count = 0
@@ -27,7 +27,7 @@ def optopm_r(filename):
             parts = line.split(',')
             #print(parts)   
             if parts[-1].lower() == "remote":
-                if count =="0":
+                if count == 0:
                     print("Remote models:")
                 print(parts[0])
                 count += 1
@@ -40,7 +40,7 @@ def option_c(filename, company):
     with open(filename, 'r') as file:
         lines = file.readlines()
         if not lines:
-            print("No models in this file")
+            print(f"No models from {company} in this file")
             return
     with open(filename, 'r') as file:
         count = 0
@@ -75,7 +75,7 @@ def main():
         print("it misses the argument file")
         sys.exit(1)
     else:
-        filename  = input_list[-1].lower()
+        filename  = input_list[-1]
         options = input_list[0].lower()
         #test fileneme and options correct
         #print(options, filename)
