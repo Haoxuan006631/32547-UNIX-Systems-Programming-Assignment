@@ -1,5 +1,12 @@
+'''
+Assignment - UNIX Systems Programming
+Name: Haoxuan Jin
+Student ID: 25167901
+Github link: https://github.com/Haoxuan006631/32547-UNIX-Systems-Programming-Assignment.git
+'''
 import sys
 import os
+
 def option_a(filename):
     with open(filename, 'r') as file:
         lines = file.readlines()
