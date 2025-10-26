@@ -1,0 +1,8 @@
+gemma-7b,Google,8.5
+flan-t5-large,Google,0.8
+o3-deep-research-2025-06-26,OpenAI,remote
+Llama-3.1-70B-evals,Meta,70.0
+Mistral-7B-Instruct-v0.2,MistralAI,7.2
+gpt-3.5-turbo-instruct,OpenAI,remote
+paligemma2-3b-pt-224,Google,3.0
+claude-sonnet-4,Anthropic,remote
